@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>فاطمه فطومه | Official Profile</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Cairo & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Cairo"', '"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brandYellow: '#ffd000',
+            brandBlue: '#0284c7',
+            facebook: '#1877f2',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Duck Cursor (High Quality SVG Encoded) */
+    html, body {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><path fill='%23FFD000' stroke='%23C69200' stroke-width='1.2' d='M25 15c0-4.4-3.6-8-8-8s-7 3-7 6.5c0 0.8 0.2 1.5 0.5 2.2C8 16.5 6 18.5 6 22c0 5 4.5 9 12 9s14-4 14-8.5c0-2.5-1.5-4.5-4-5.5 0.7-1 1-2.2 1-3.5 0-0.4 0-0.7-0.1-1.1-1.2 0.7-2.6 1.1-4.1 1.1-.3 0-.6 0-.8-0.5z'/><ellipse cx='26' cy='16' rx='4.5' ry='2.2' fill='%23FF6B00'/><circle cx='13.5' cy='11.5' r='2' fill='%23111827'/><circle cx='13' cy='11' r='0.7' fill='%23FFFFFF'/><path fill='%23FFDF40' opacity='0.7' d='M10 21c3-2 8-2 11 1s4 4 1 6-9 2-12-2c-0.8-1-0.8-3.5 0-5z'/></svg>") 8 8, auto !important;
+    }
+
+    button, a, input, [role="button"], .cursor-pointer {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 36 36'><path fill='%23FFE033' stroke='%23C69200' stroke-width='1.4' d='M25 15c0-4.4-3.6-8-8-8s-7 3-7 6.5c0 0.8 0.2 1.5 0.5 2.2C8 16.5 6 18.5 6 22c0 5 4.5 9 12 9s14-4 14-8.5c0-2.5-1.5-4.5-4-5.5 0.7-1 1-2.2 1-3.5 0-0.4 0-0.7-0.1-1.1-1.2 0.7-2.6 1.1-4.1 1.1-.3 0-.6 0-.8-0.5z'/><ellipse cx='26' cy='16' rx='5' ry='2.5' fill='%23FF4500'/><circle cx='13.5' cy='11.5' r='2.2' fill='%23111827'/><circle cx='12.8' cy='10.8' r='0.8' fill='%23FFFFFF'/><path fill='%23FFFFFF' opacity='0.5' d='M11 9.5a5 5 0 0 1 4-2'/></svg>") 8 8, pointer !important;
+    }
+
+    /* Fixed Ducks Background with Deep Film Layer */
+    .hero-bg {
+      background-image: url('https://i.postimg.cc/R6BZZVGc/image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Ultra Glassmorphic Card */
+    .glass-deck {
+      background: rgba(13, 20, 36, 0.72);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 
+        0 30px 70px -15px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(255, 208, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-inner {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    /* Rotating Avatar Ring Animation */
+    @keyframes ringPulse {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .avatar-glow-ring {
+      animation: ringPulse 9s linear infinite;
+    }
+
+    /* Vinyl Spinning */
+    .spin-vinyl {
+      animation: spin 3.5s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Sound Wave / Equalizer */
+    .eq-bar {
+      width: 3.5px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ffd000, #38bdf8);
+      height: 4px;
+      transition: height 0.15s ease;
+    }
+    .is-playing .bar-1 { animation: eqBounce 0.9s ease-in-out infinite; }
+    .is-playing .bar-2 { animation: eqBounce 0.65s ease-in-out 0.15s infinite; }
+    .is-playing .bar-3 { animation: eqBounce 1.1s ease-in-out 0.3s infinite; }
+    .is-playing .bar-4 { animation: eqBounce 0.75s ease-in-out 0.1s infinite; }
+    .is-playing .bar-5 { animation: eqBounce 1.0s ease-in-out 0.25s infinite; }
+
+    @keyframes eqBounce {
+      0%, 100% { height: 4px; }
+      50% { height: 22px; }
+    }
+
+    /* Water Ripple Effect on Click */
+    .ripple-bubble {
+      position: fixed;
+      pointer-events: none;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 208, 0, 0.8);
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(255, 208, 0, 0.1) 70%, transparent 100%);
+      transform: translate(-50%, -50%) scale(0);
+      animation: rippleAnim 0.75s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+      z-index: 99999;
+    }
+
+    @keyframes rippleAnim {
+      to {
+        transform: translate(-50%, -50%) scale(2.8);
+        opacity: 0;
+      }
+    }
+
+    /* Floating Duck Trail Particle */
+    .duck-trail {
+      position: fixed;
+      pointer-events: none;
+      font-size: 14px;
+      z-index: 99998;
+      transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Sleek Volume Slider */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: rgba(255, 255, 255, 0.15);
+      height: 5px;
+      border-radius: 8px;
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffd000;
+      box-shadow: 0 0 10px rgba(255, 208, 0, 0.8);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="hero-bg min-h-screen text-slate-100 flex items-center justify-center p-4 relative overflow-x-hidden font-sans select-none">
+
+  <!-- Ambient Dark Overlay with Water Caustics Glow -->
+  <div class="fixed inset-0 bg-slate-950/65 pointer-events-none z-0"></div>
+  
+  <!-- Floating Ambient Color Spheres -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-400/20 rounded-full blur-[110px]"></div>
+    <div class="absolute top-1/2 -left-32 w-80 h-80 bg-sky-500/25 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-20 right-1/4 w-96 h-96 bg-yellow-500/15 rounded-full blur-[100px]"></div>
+  </div>
+
+  <!-- Interactive 3D Perspective Wrapper -->
+  <div id="tilt-wrapper" class="relative z-10 w-full max-w-[430px] my-6 transition-transform duration-200 ease-out">
+    
+    <!-- Profile Card Container -->
+    <main class="glass-deck rounded-[32px] p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden">
+      
+      <!-- Subtle Shiny Top Edge Highlight -->
+      <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent"></div>
+
+      <!-- Online Live Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 mb-6 shadow-sm">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span>متصل الآن &bull; الحساب الرسمي ✨</span>
+      </div>
+
+      <!-- Profile Picture with Luxury Animated Gradient Border -->
+      <div class="relative mb-5 group">
+        <div class="absolute -inset-1.5 rounded-full avatar-glow-ring bg-gradient-to-tr from-amber-400 via-sky-400 to-rose-400 opacity-80 blur-sm group-hover:opacity-100 transition duration-500"></div>
+        
+        <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden p-1 bg-slate-900 shadow-2xl border-2 border-white/25">
+          <img 
+            id="profile-img"
+            src="https://i.postimg.cc/JG60587P/image.jpg" 
+            alt="فاطمه فطومه" 
+            class="w-full h-full object-cover rounded-full transition-transform duration-700 group-hover:scale-108"
+            onerror="this.src='https://placehold.co/400x400/111827/ffd000?text=فاطمه+فطومه'"
+          />
+        </div>
+
+        <!-- Verified Seal Badge -->
+        <div class="absolute bottom-1 right-2 w-9 h-9 rounded-full bg-gradient-to-tr from-sky-500 to-blue-600 flex items-center justify-center text-white text-base shadow-lg ring-4 ring-[#0d1424]" title="حساب رسمي موثق">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+
+      <!-- Name & Bio with Luxury Gold Gradient -->
+      <h1 class="text-3xl font-extrabold tracking-tight mb-1 text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-200 drop-shadow-sm flex items-center gap-2">
+        <span>فاطمه فطومه</span>
+        <span class="text-xl">🦆</span>
+      </h1>
+      
+      <p class="text-sm text-slate-300 font-medium max-w-xs mb-6 leading-relaxed">
+        أهلاً بكم في عالمي الصغير ✨ يمكنكم التواصل ومتابعة جديدي عبر حسابي على فيسبوك.
+      </p>
+
+      <!-- Facebook Action Button (Primary CTA) -->
+      <a 
+        href="https://www.facebook.com/nikolai.kotlarov.9" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="w-full relative group overflow-hidden rounded-2xl p-[1px] bg-gradient-to-r from-amber-400 via-sky-400 to-blue-600 shadow-xl shadow-sky-950/40 hover:shadow-amber-500/20 transition-all duration-300 transform active:scale-[0.98]"
+      >
+        <div class="flex items-center justify-between px-5 py-4 rounded-[15px] bg-[#0c1322]/90 group-hover:bg-[#0c1322]/70 transition duration-300">
+          <div class="flex items-center gap-3.5">
+            <span class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-500 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform">
+              <i class="fab fa-facebook-f"></i>
+            </span>
+            <div class="text-right">
+              <span class="block text-[11px] font-bold text-amber-300 tracking-wider">الحساب الرسمي على فيسبوك</span>
+              <span class="text-base font-extrabold text-white">زيارة الملف الشخصي</span>
+            </div>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-amber-300 group-hover:-translate-x-1 transition-transform">
+            <i class="fas fa-arrow-left text-sm"></i>
+          </div>
+        </div>
+      </a>
+
+      <!-- Quick Action Buttons: Copy Facebook Link & Duck Quack Easter Egg -->
+      <div class="grid grid-cols-2 gap-2.5 w-full mt-3">
+        <button 
+          id="copy-link-btn"
+          onclick="handleCopyLink()"
+          class="py-2.5 px-3 rounded-xl text-xs font-bold text-slate-200 glass-inner hover:bg-white/10 transition flex items-center justify-center gap-2 active:scale-95"
+        >
+          <i class="far fa-copy text-amber-300 text-sm"></i>
+          <span id="copy-text">نسخ رابط الحساب</span>
+        </button>
+
+        <button 
+          onclick="triggerDuckSparkle(event)"
+          class="py-2.5 px-3 rounded-xl text-xs font-bold text-amber-300 glass-inner hover:bg-amber-400/10 border-amber-400/20 transition flex items-center justify-center gap-1.5 active:scale-95"
+        >
+          <span>صوت البطة 🦆</span>
+          <span class="text-[10px] text-slate-400">انقر هنا</span>
+        </button>
+      </div>
+
+      <!-- Toast Alert Notification -->
+      <div id="toast-msg" class="opacity-0 pointer-events-none transition-all duration-300 transform translate-y-3 mt-2 px-4 py-1.5 rounded-full bg-amber-400 text-slate-900 text-xs font-bold shadow-lg">
+        ✓ تم نسخ رابط الحساب بنجاح!
+      </div>
+
+      <!-- Luxury Music Player Box -->
+      <div class="w-full mt-5 pt-4 border-t border-white/10 text-right">
+        <div class="glass-inner rounded-2xl p-4 relative overflow-hidden">
+          
+          <div class="flex items-center justify-between gap-3 mb-3">
+            <!-- Vinyl & Title -->
+            <div class="flex items-center gap-3 overflow-hidden">
+              <div class="relative w-11 h-11 rounded-full bg-slate-900 border border-amber-400/30 flex items-center justify-center shrink-0 shadow-inner">
+                <i class="fas fa-compact-disc text-amber-400 text-xl" id="vinyl-icon"></i>
+                <div class="absolute inset-0 m-auto w-2.5 h-2.5 rounded-full bg-white/80"></div>
+              </div>
+              <div class="truncate">
+                <p class="text-[11px] font-bold text-amber-300 uppercase">الأغنية الرسمية 🦆</p>
+                <p class="text-sm font-semibold text-white truncate">أغنية البطة - حمزة الصغير</p>
+              </div>
+            </div>
+
+            <!-- Equalizer Sound Wave -->
+            <div class="flex items-end gap-1 h-6 px-1.5 shrink-0" id="eq-container">
+              <span class="eq-bar bar-1"></span>
+              <span class="eq-bar bar-2"></span>
+              <span class="eq-bar bar-3"></span>
+              <span class="eq-bar bar-4"></span>
+              <span class="eq-bar bar-5"></span>
+            </div>
+          </div>
+
+          <!-- Playback Controls & Volume Slider -->
+          <div class="flex items-center justify-between gap-3 pt-1">
+            <button 
+              id="audio-btn"
+              onclick="toggleMusicPlayback()"
+              class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-black text-xs transition duration-200 shadow-md shadow-amber-500/20 active:scale-95 shrink-0"
+            >
+              <i class="fas fa-play text-xs" id="play-pause-icon"></i>
+              <span id="play-text">تشغيل الموسيقى</span>
+            </button>
+
+            <!-- Volume Control -->
+            <div class="flex items-center gap-2 w-28 justify-end">
+              <i class="fas fa-volume-high text-slate-300 text-xs" id="volume-indicator"></i>
+              <input 
+                id="volume-range"
+                type="range" 
+                min="0" 
+                max="1" 
+                step="0.05" 
+                value="0.75" 
+                oninput="changeVolume(this.value)"
+                class="w-full cursor-pointer"
+                title="التحكم بمستوى الصوت"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <footer class="mt-5 text-[11px] text-slate-400 font-medium">
+        جميع الحقوق محفوظة &copy; فاطمه فطومه 🦆
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Background Music Audio Element (Direct Catbox Link) -->
+  <audio id="ambient-audio" preload="auto" loop>
+    <source src="https://files.catbox.moe/pzyz1g.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Duck Quack Sound Effect Audio Element -->
+  <audio id="quack-sound" preload="auto">
+    <source src="https://files.catbox.moe/im6g3y.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Interactive JavaScript: Cursor Water Trail, 3D Tilt, Audio Control -->
+  <script>
+    // 1. Water Ripple Effect & Duck Particle Trail on Mouse Move
+    let lastTrailTime = 0;
+    window.addEventListener('mousemove', (e) => {
+      const now = Date.now();
+      if (now - lastTrailTime > 65) {
+        lastTrailTime = now;
+        createWaterTrail(e.clientX, e.clientY);
+      }
+    });
+
+    // Ripple effect on click anywhere
+    window.addEventListener('click', (e) => {
+      createWaterRipple(e.clientX, e.clientY);
+    });
+
+    function createWaterRipple(x, y) {
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple-bubble';
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      ripple.style.width = '35px';
+      ripple.style.height = '35px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 750);
+    }
+
+    function createWaterTrail(x, y) {
+      const trail = document.createElement('div');
+      trail.className = 'duck-trail';
+      trail.innerText = '💧';
+      trail.style.left = `${x + (Math.random() * 8 - 4)}px`;
+      trail.style.top = `${y + 12}px`;
+      trail.style.opacity = '0.7';
+      trail.style.fontSize = `${Math.floor(Math.random() * 6 + 10)}px`;
+      document.body.appendChild(trail);
+
+      setTimeout(() => {
+        trail.style.transform = `translate(-50%, 15px) scale(0.3)`;
+        trail.style.opacity = '0';
+      }, 50);
+
+      setTimeout(() => trail.remove(), 600);
+    }
+
+    // 2. Duck Quack Easter Egg & Sound Effect
+    const quackAudio = document.getElementById('quack-sound');
+
+    function triggerDuckSparkle(event) {
+      createWaterRipple(event.clientX, event.clientY);
+
+      // تشغيل تأثير صوت البطة من البداية
+      if (quackAudio) {
+        quackAudio.currentTime = 0;
+        quackAudio.play().catch(err => console.log('Quack sound blocked:', err));
+      }
+
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+          const duck = document.createElement('div');
+          duck.className = 'duck-trail';
+          duck.innerText = '🦆';
+          duck.style.left = `${event.clientX + (Math.random() * 60 - 30)}px`;
+          duck.style.top = `${event.clientY}px`;
+          duck.style.fontSize = '20px';
+          document.body.appendChild(duck);
+          
+          setTimeout(() => {
+            duck.style.transform = `translate(-50%, -${40 + Math.random() * 40}px) scale(1.2)`;
+            duck.style.opacity = '0';
+          }, 30);
+          setTimeout(() => duck.remove(), 700);
+        }, i * 70);
+      }
+    }
+
+    // 3. Smooth 3D Card Tilt on Mouse Move
+    const cardWrapper = document.getElementById('tilt-wrapper');
+    window.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+      const x = (e.clientX / window.innerWidth) - 0.5;
+      const y = (e.clientY / window.innerHeight) - 0.5;
+      cardWrapper.style.transform = `perspective(1000px) rotateY(${x * 9}deg) rotateX(${-y * 9}deg)`;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      cardWrapper.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+    });
+
+    // 4. Music Player Logic
+    const audioTrack = document.getElementById('ambient-audio');
+    const playPauseIcon = document.getElementById('play-pause-icon');
+    const playText = document.getElementById('play-text');
+    const vinylIcon = document.getElementById('vinyl-icon');
+    const eqContainer = document.getElementById('eq-container');
+    const volumeRange = document.getElementById('volume-range');
+    const volumeIndicator = document.getElementById('volume-indicator');
+
+    audioTrack.volume = 0.75;
+
+    function toggleMusicPlayback() {
+      if (audioTrack.paused) {
+        audioTrack.play().then(() => {
+          playPauseIcon.className = 'fas fa-pause text-xs';
+          playText.innerText = 'إيقاف مؤقت';
+          vinylIcon.classList.add('spin-vinyl');
+          eqContainer.classList.add('is-playing');
+        }).catch(e => console.log('Audio autoplay prevented:', e));
+      } else {
+        audioTrack.pause();
+        playPauseIcon.className = 'fas fa-play text-xs';
+        playText.innerText = 'تشغيل الموسيقى';
+        vinylIcon.classList.remove('spin-vinyl');
+        eqContainer.classList.remove('is-playing');
+      }
+    }
+
+    function changeVolume(val) {
+      audioTrack.volume = parseFloat(val);
+      if (audioTrack.volume === 0) {
+        volumeIndicator.className = 'fas fa-volume-xmark text-slate-400 text-xs';
+      } else if (audioTrack.volume < 0.5) {
+        volumeIndicator.className = 'fas fa-volume-low text-slate-300 text-xs';
+      } else {
+        volumeIndicator.className = 'fas fa-volume-high text-amber-300 text-xs';
+      }
+    }
+
+    // 5. Copy Facebook Link to Clipboard
+    function handleCopyLink() {
+      const fbLink = "https://www.facebook.com/nikolai.kotlarov.9";
+      
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(fbLink).then(showToast);
+      } else {
+        const dummy = document.createElement('textarea');
+        dummy.value = fbLink;
+        dummy.style.position = 'fixed';
+        dummy.style.opacity = '0';
+        document.body.appendChild(dummy);
+        dummy.focus();
+        dummy.select();
+        try {
+          document.execCommand('copy');
+          showToast();
+        } catch (err) {
+          console.error('Copy failed', err);
+        }
+        document.body.removeChild(dummy);
+      }
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast-msg');
+      const copyText = document.getElementById('copy-text');
+      
+      copyText.innerText = 'تم النسخ!';
+      toast.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        copyText.innerText = 'نسخ رابط الحساب';
+        toast.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2200);
+    }
+  </script>
+</body>
+</html>
